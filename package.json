@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "scripts": {
   "start": "node src/index.js",
-  "cypress:open": "start-server-and-test start http://localhost:3000 cypress open",
-  "cypress:run": "start-server-and-test start http://localhost:3000 cypress run",
-  "test": "npm run cypress:run"
-  },
+  "test:ci": "cypress run",
+  "test:open": "cypress open",
+  "cypress:run": "start-server-and-test start http://localhost:3000 test:ci",
+  "cypress:open": "start-server-and-test start http://localhost:3000 test:open"
+},
   "dependencies": {
     "express": "^4.18.2"
   },
