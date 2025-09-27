@@ -2,19 +2,17 @@
   "name": "my-demo-app",
   "version": "1.0.0",
   "scripts": {
-    "start": "node src/index.js",
-    "test": "cypress run"
+  "start": "node src/index.js",
+  "cypress:open": "start-server-and-test start http://localhost:3000 cypress open",
+  "cypress:run": "start-server-and-test start http://localhost:3000 cypress run",
+  "test": "npm run cypress:run"
   },
   "dependencies": {
     "express": "^4.18.2"
   },
   "devDependencies": {
     "cypress": "^13.0.0",
-    "wait-on": "^7.0.1"
-  },
-  "scripts": {
-  "start": "node src/index.js",
-  "cypress:open": "start-server-and-test start http://localhost:3000 cypress open",
-  "cypress:run": "start-server-and-test start http://localhost:3000 cypress run"
-}
+    "start-server-and-test": "^2.1.2",
+    "wait-on": "^7.2.0"
+  }
 }
